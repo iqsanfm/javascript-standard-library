@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      {
+        //Array loop
+        const array = ["iqsan", "faisal"];
+
+        array.forEach(function (value, index) {
+          console.log(`${value} ${index}`);
+        });
+
+        array.forEach((value, index) => {
+          console.log(`${value} ${index}`);
+        });
+      }
+
+      {
+        //Array queue
+        const queue = [];
+
+        queue.push("Iqsan");
+        queue.push("Faisal");
+
+        console.log(queue.shift());
+        console.log(queue.shift());
+        console.log(queue.shift());
+      }
+
+      {
+        //Array stack
+        const stack = [];
+
+        stack.push("Iqsan");
+        stack.push("Faisal");
+
+        console.log(stack.pop());
+        console.log(stack.pop());
+        console.log(stack.pop());
+      }
+
+      {
+        //Array Search
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.log(source.find((value) => value > 3));
+        console.log(source.findIndex((value) => value > 3));
+        console.log(source.includes(7));
+        console.log(source.indexOf(5));
+        console.log(source.lastIndexOf(5));
+      }
+
+      {
+        //Array Filter
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        console.log(numbers.filter((value) => value % 2 == 1)); //Ganjil
+        console.log(numbers.filter((value) => value % 2 == 0)); //Genap
+      }
+
+      {
+        //Array Tranform
+        const names = "iqsan Faisal".split(" ");
+        const namesUpper = names.map((value) => value.toUpperCase());
+        console.log(names.map((value) => value.toUpperCase()));
+        console.log(namesUpper);
+
+        const namesReduce = names.reduce(
+          (before, value) => before + " " + value
+        );
+        console.log(namesReduce);
+
+        const namesRight = names.reduceRight(
+          (before, value) => before + " " + value
+        );
+        console.log(namesRight);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(numbers.reduce((result, value) => result + value));
+        console.log(numbers.reduceRight((result, value) => result + value));
+      }
+    </script>
+  </body>
+</html>
