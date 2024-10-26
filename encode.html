@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENCODE</title>
+  </head>
+  <body>
+    <script>
+      {
+        //encode uri dan decode uri
+        const url = "https://contoh.com/?name=Iqsan Faisal";
+        console.log(url);
+
+        const encoded = encodeURI(url);
+        console.log(encoded);
+
+        const decoded = decodeURI(encoded);
+        console.log(decoded);
+      }
+
+      {
+        //encode uri dan decode uri
+        const value = "Iqsan Faisal";
+        const url = "https://contoh.com/?name=";
+        console.log(url);
+
+        const encoded = encodeURIComponent(value);
+        console.log(url + encoded);
+
+        const decoded = decodeURIComponent(encoded);
+        console.log(url + decoded);
+      }
+    </script>
+  </body>
+</html>

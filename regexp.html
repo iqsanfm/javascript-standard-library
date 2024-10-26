@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REGEXP</title>
+  </head>
+  <body>
+    <script>
+      {
+        //create regex
+
+        const regex1 = /if/;
+        const regex2 = new RegExp("if");
+        const regex3 = new RegExp(/if/);
+      }
+      {
+        //test regex
+
+        const text =
+          "Dashwood contempt on mr unlocked resolved provided of of. Stanhill wondered it it welcomed oh. Hundred no prudent he however smiling at an offence. If earnestly extremity he he propriety something admitting convinced ye";
+        const regex = /unlocked/;
+
+        const result = regex.exec(text);
+        console.log(result);
+
+        const test = regex.test(text);
+        console.log(test);
+      }
+
+      {
+        //regex modifier
+        const name = "iqsan faisal\nIqsan faisal\nIqsan Faisal";
+        const regex1 = /iqsan/gi;
+        const regex2 = /Faisal/gi;
+
+        let result;
+        while ((result = regex1.exec(name)) != null) {
+          console.log(result);
+        }
+        while ((result = regex2.exec(name)) != null) {
+          console.log(result);
+        }
+      }
+
+      {
+        //advanced regex
+        const regex = /fi[oaeu]/gi;
+
+        const name = "fio fia fiu fie";
+        let result;
+        while ((result = regex.exec(name)) != null) {
+          console.log(result);
+        }
+      }
+
+      {
+        const name = "fio fia fiu fie fii";
+
+        console.log(name.match(/fi[oaeui]/gi));
+        console.log(name.search(/fi[oaeui]/gi));
+        console.log(name.replace(/fi[oaeui]/i, "kamu"));
+        console.log(name.replaceAll(/fi[oaeui]/gi, "kamu"));
+        console.log(name.split(/i/gi));
+      }
+    </script>
+  </body>
+</html>
